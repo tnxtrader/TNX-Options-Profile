@@ -1,0 +1,10 @@
+bin/
+obj/
+bin-quantower/
+obj-qt/
+.vs/
+*.user
+*.suo
+.idea/
+.DS_Store
+Thumbs.db

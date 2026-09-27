@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Optimize>true</Optimize>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>TNXOptionsProfile</AssemblyName>
+    <RootNamespace>TNXIndicators</RootNamespace>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <OutputPath>bin\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <DebugType>embedded</DebugType>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="src\TNXOptionsProfile.cs" />
+    <Compile Include="src\OptionsCore.cs" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <QuantowerBin Condition="'$(QuantowerBin)' == ''">C:\AMP Quantower\TradingPlatform\v1.146.7\bin</QuantowerBin>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="TradingPlatform.BusinessLayer">
+      <HintPath>$(QuantowerBin)\TradingPlatform.BusinessLayer.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="System.Drawing.Common">
+      <HintPath>$(QuantowerBin)\System\System.Drawing.Common.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+</Project>
